@@ -2,6 +2,8 @@ const path = require("path");
 const hbs = require("hbs");
 const fs = require("fs");
 
+const port = process.env.PORT || 3000;
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -53,6 +55,6 @@ app.get("/bad", (req, res, next) => {
 app.use("/maintanence", (req, res, next) => {
   res.render("maintanence.hbs");
 });
-app.listen(3000, () => {
-  "The Server is Running on Port 3000";
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
